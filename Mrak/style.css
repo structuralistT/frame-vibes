@@ -1,0 +1,160 @@
+/* Скрыть стандартный футер и верхний хедер Streamlit */
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* Дополнительно: меню развертывания и тулбар (часто остаются видимыми) */
+#MainMenu {
+    visibility: hidden;
+}
+
+[data-testid="stToolbar"] {
+    visibility: hidden;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1400px;
+}
+
+[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(243, 156, 18, 0.25);
+}
+
+.app-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-bottom: 0.25rem;
+}
+
+.app-subtitle {
+    color: #b0b8c5;
+    margin-bottom: 1.2rem;
+}
+
+/* Не используем имя .card — оно занято Bootstrap */
+.forge-panel {
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    background: linear-gradient(
+        160deg,
+        rgba(38, 39, 48, 0.95) 0%,
+        rgba(24, 25, 33, 0.95) 100%
+    );
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem;
+}
+
+.metric-item {
+    border: 1px solid rgba(243, 156, 18, 0.2);
+    border-radius: 10px;
+    padding: 0.75rem;
+    background-color: rgba(14, 17, 23, 0.7);
+}
+
+.metric-label {
+    color: #b8bfca;
+    font-size: 0.82rem;
+    margin-bottom: 0.2rem;
+}
+
+.metric-value {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Кнопки — скругление и тень */
+div[data-testid="stButton"] > button {
+    border-radius: 12px;
+    border: 1px solid rgba(243, 156, 18, 0.7);
+    background: linear-gradient(180deg, #f39c12 0%, #d17f07 100%);
+    color: #0e1117;
+    font-weight: 700;
+    transition: all 0.18s ease;
+}
+
+div[data-testid="stButton"] > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+}
+
+div[data-testid="stDownloadButton"] > button {
+    border-radius: 12px;
+}
+
+/* Поля ввода и селекты — скругление */
+div[data-testid="stNumberInput"] input,
+div[data-testid="stTextInput"] input,
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    border-radius: 10px !important;
+}
+
+/* Карточки Bootstrap + наши панели — лёгкая тень */
+.card.forge-shadow,
+.forge-panel {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Графики (matplotlib в Streamlit рендерится как stImage) */
+div[data-testid="stImage"] {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+}
+
+.section-title {
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #f4b350;
+}
+
+/* --- CalcForge-подобные детали: скроллбар (WebKit / Chromium) --- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1d24;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f39c12, #c87f0a);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f4b350;
+}
+
+/* Ползунок st.slider (Base Web) */
+div[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+    background-color: #f39c12 !important;
+    border: 2px solid #0e1117 !important;
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.45);
+}
+
+div[data-testid="stSlider"] [data-baseweb="slider"] [data-testid="stTickBarMin"],
+div[data-testid="stSlider"] [data-baseweb="slider"] [data-testid="stTickBarMax"] {
+    background-color: rgba(243, 156, 18, 0.35);
+}
