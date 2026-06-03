@@ -23,12 +23,12 @@
 
 ## 🚀 Как запустить проект локально
 
-1. Склонируй репозиторий с проектом:
+1. Скопируйте репозиторий с проектом:
    ```bash
    git clone [https://github.com/structuralistT/frame-vibes.git](https://github.com/structuralistT/frame-vibes.git)
    cd frame-vibes
    
- Установи необходимые библиотеки (рекомендуется использовать виртуальное окружение venv):
+ Установите необходимые библиотеки (рекомендуется использовать виртуальное окружение venv):
     Bash
 
     pip install -r requirements.txt
