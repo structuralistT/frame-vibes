@@ -676,7 +676,7 @@ def render_sidebar() -> bool:
         st.markdown("### Сводка по нагрузкам")
         render_loads_summary()
         st.markdown("---")
-        return st.button("Узнать горькую правду", type="primary", use_container_width=True)
+        return st.button("Рассчитать!!!", type="primary", use_container_width=True)
 def main() -> None:
     st.set_page_config(page_title="Plane Frame Solver", page_icon="📐", layout="wide", initial_sidebar_state="expanded")
     plotting.configure_matplotlib_style()
